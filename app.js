@@ -15,7 +15,7 @@ app.get('/api/v1/tasks', (request, response) => {
 
 app.get('/api/v1/tasks/:id', (request, response) => {
     const id = request.params.id;
-    const task = tasks.find(t => t.id === id);
+    const task = tasks.find(t => t.id == id);
 
     if (task) {
         response.json(task);
@@ -33,7 +33,7 @@ app.post('/api/v1/tasks', (request, response) => {
             response.status(400).send('A task needs the following properties: id, title and done.');
     }
 
-    if (tasks.find(t => t.id === task.id)) {
+    if (tasks.find(t => t.id == task.id)) {
             response.status(400).send(`A task with id '${task.id}' already exists.`);
     } else {
         tasks.push(task);
@@ -45,7 +45,7 @@ app.post('/api/v1/tasks', (request, response) => {
 
 app.delete('/api/v1/tasks/:id', (request, response) => {
     const id = request.params.id;
-    const index = tasks.findIndex(t => t.id === id); 
+    const index = tasks.findIndex(t => t.id == id); 
     if (index != -1) {
         tasks.splice(index, 1);
         response.json(tasks);
