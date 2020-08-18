@@ -7,7 +7,7 @@ A simple Todo REST API with Node and Express.
 1. Clone the project:
 
 ```
-git clone https://gitlab.com/ntnu-dcst2002/todo-api-v2.git
+git clone https://gitlab.com/ntnu-dcst2002/todo-api.git
 ```
 
 2. Install dependencies with npm:
