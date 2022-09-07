@@ -30,7 +30,7 @@ app.post('/api/v1/tasks', (request, response) => {
     if (!task.hasOwnProperty('id') ||
         !task.hasOwnProperty('title') || 
         !task.hasOwnProperty('done')) {
-            response.status(400).send('A task needs the following properties: id, title and done.');
+            return response.status(400).send('A task needs the following properties: id, title and done.');
     }
 
     if (tasks.find(t => t.id == task.id)) {
